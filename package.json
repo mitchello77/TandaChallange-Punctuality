@@ -1,0 +1,22 @@
+{
+  "name": "tandachallange-punctuality",
+  "version": "1.0.0",
+  "description": "Challange for intership at Tanda",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitchello77/TandaChallange-Punctuality.git"
+  },
+  "keywords": [
+    "Tanda"
+  ],
+  "author": "Mitchell Williams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mitchello77/TandaChallange-Punctuality/issues"
+  },
+  "homepage": "https://github.com/mitchello77/TandaChallange-Punctuality#readme"
+}
