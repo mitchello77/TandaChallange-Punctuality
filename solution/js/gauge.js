@@ -35,4 +35,4 @@
     text = Math.floor(degrees/360*100) + "%";
     text_width = ctx.measureText(text).width;
     ctx.fillText(text, W/2 - text_width/2, H/2+10);
-  }
+  };

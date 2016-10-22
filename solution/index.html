@@ -35,20 +35,13 @@
             </div>
           </section>
           <section id="datagrid">
-            <table style="width:100%">
+            <table id="datatable" style="width:100%">
               <tr>
-                <th>Date <span></span></th>
-                <th>Rostered Start <span></span></th>
-                <th>Actual Start <span></span></th>
-                <th>Rostered Finish <span></span></th>
-                <th>Actual Finish <span></span></th>
-              </tr>
-              <tr>
-                <td>12th Sep</td>
-                <td>11:00am</td>
-                <td>11:01am</td>
-                <td>6:00pm</td>
-                <td>5:59pm</td>
+                <th><span>Date</span></th>
+                <th><span>Rostered Start</span></th>
+                <th><span>Actual Start</span></th>
+                <th><span>Rostered Finish</span></th>
+                <th><span>Actual Finish</span></th>
               </tr>
             </table>
           </section>
@@ -56,6 +49,8 @@
       </section>
 
         <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/locale/en-au.js"></script>
         <script src="js/gauge.js"></script>
         <script src="js/main.js"></script>
     </body>
