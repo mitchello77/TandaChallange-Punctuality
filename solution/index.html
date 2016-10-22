@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet">
+    </head>
+    <body>
+      <section id="module">
+        <header>
+          <span class="logo"></span>
+          <span class="name">Elmo</span>
+        </header>
+        <main>
+          <section id="breakdown">
+            <canvas id="gauge" width="150" height="150"> </canvas>
+            <div class="summary">For clock ins and outs within 30 minutes of his roster, <br />Elmo is punctual ##% of the time. Time Saved: # mins.</div>
+            <div class="grid">
+              <div>
+                <span>Arrived Late</span>
+                <span class="value">#</span>
+              </div>
+              <div>
+                <span>Punctual</span>
+                <span class="value">#</span>
+              </div>
+              <div>
+                <span>Left Early</span>
+                <span class="value">#</span>
+              </div>
+            </div>
+          </section>
+          <section id="datagrid">
+            <table style="width:100%">
+              <tr>
+                <th>Date <span></span></th>
+                <th>Rostered Start <span></span></th>
+                <th>Actual Start <span></span></th>
+                <th>Rostered Finish <span></span></th>
+                <th>Actual Finish <span></span></th>
+              </tr>
+              <tr>
+                <td>12th Sep</td>
+                <td>11:00am</td>
+                <td>11:01am</td>
+                <td>6:00pm</td>
+                <td>5:59pm</td>
+              </tr>
+            </table>
+          </section>
+        </main>
+      </section>
+
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="js/gauge.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

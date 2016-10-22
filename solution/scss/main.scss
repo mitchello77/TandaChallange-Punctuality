@@ -1,0 +1,97 @@
+@import "normalize/import-now";
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+#module {
+  max-width: 900px;
+  min-width: 300px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+  height: 90px;
+  padding: 15px;
+  box-sizing: border-box;
+  .logo {
+    background: url('http://vignette1.wikia.nocookie.net/mugen/images/4/43/Elmo.png') no-repeat;
+    background-size: cover;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    float: left;
+    overflow: none;
+    box-sizing: border-box;
+  }
+  .name {
+    font-size: 22px;
+    margin-left: 15px;
+    line-height: 60px;
+  }
+}
+
+
+#breakdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  #gauge {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .summary {
+    margin-bottom: 10px;
+  }
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    div {
+      width: 200px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      margin: 0 10px;
+      font-weight: 600;
+      span:not(.value){
+        color: #999;
+      }
+      span.value {
+        float: right;
+      }
+    }
+  }
+}
+
+#datagrid {
+  margin-bottom: 10px;
+  table {
+    border-collapse: collapse;
+    th, td {
+      text-align: left;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    th {
+      padding-left: 20px;
+    }
+  }
+}
