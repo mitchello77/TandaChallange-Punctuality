@@ -3,11 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
-        <meta name="description" content="">
+        <title>Tanda Punctuality</title>
+        <meta name="author" content="Mitchell Williams">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/main.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet">
+        <link rel="shortcut icon" href="https://www.tanda.co/wp-content/themes/tanda/favicon.png"><link>
     </head>
     <body>
       <section id="module">
@@ -27,30 +28,36 @@
         <main>
           <section id="breakdown">
             <canvas id="gauge" width="150" height="150"> </canvas>
-            <div class="summary">For clock ins and outs within 30 minutes of his roster, <br />Elmo is punctual ##% of the time. Time Saved: # mins.</div>
+            <div class="summary">For clock ins and outs within 30 minutes of his roster, <br />Elmo is punctual <span id="punctualpercent">#</span>% of the time. Time Saved: <span id="timesaved">#</span> mins.</div>
             <div class="grid">
               <div>
                 <span>Arrived Late</span>
-                <span class="value">#</span>
+                <span id="arrivedlate" class="value">#</span>
               </div>
               <div>
                 <span>Punctual</span>
-                <span class="value">#</span>
+                <span id="punctual" class="value">#</span>
               </div>
               <div>
                 <span>Left Early</span>
-                <span class="value">#</span>
+                <span id="leftearly" class="value">#</span>
               </div>
+            </div>
+          </section>
+          <section id="legend">
+            <div class="wrap">
+              <div><span class="orange"></span>: Missing Data</div>
+              <div><span class="red"></span>: Unpunctual clock-in/clock-out</div>
             </div>
           </section>
           <section id="datagrid">
             <table id="datatable" style="width:100%">
               <tr>
-                <th><span>Date</span></th>
-                <th><span>Rostered Start</span></th>
-                <th><span>Actual Start</span></th>
-                <th><span>Rostered Finish</span></th>
-                <th><span>Actual Finish</span></th>
+                <th>Date</th>
+                <th>Rostered Start</th>
+                <th>Actual Start</th>
+                <th>Rostered Finish</th>
+                <th>Actual Finish</th>
               </tr>
             </table>
           </section>

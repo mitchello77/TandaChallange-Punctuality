@@ -12,6 +12,7 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+  background: #fafafa;
 }
 
 #module {
@@ -21,7 +22,10 @@ body {
   border: 1px solid #ccc;
   border-radius: 10px;
   margin-top: 50px;
+  margin-bottom: 50px;
   position: relative;
+  background: #fff;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
 }
 .hidden {
   display: none !important;
@@ -67,12 +71,13 @@ header {
   }
 }
 
-
+section {
+  margin-bottom: 30px;
+}
 #breakdown {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
   #gauge {
     width: 150px;
     height: 150px;
@@ -92,8 +97,10 @@ header {
       border: 1px solid #ccc;
       margin: 0 10px;
       font-weight: 600;
+      border-radius: 5px;
       span:not(.value){
         color: #999;
+        text-transform: uppercase;
       }
       span.value {
         float: right;
@@ -101,28 +108,71 @@ header {
     }
   }
 }
+#legend {
+  display: flex;
+  justify-content: center;
+  .wrap {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    div {
+      margin: 0 20px;
+      span {
+        height: 17px;
+        width: 17px;
+        display: inline-block;
+        border-radius: 2px;
+        vertical-align: sub;
+        margin-right: 5px;
+      }
+      .red{background-color: Red;}
+      .orange{background-color: Orange;}
+    }
+  }
+}
 
 #datagrid {
-  margin-bottom: 10px;
-  overflow-x: scroll;
+  overflow-x: auto;
   table {
     border-collapse: collapse;
     min-width: 300px;
     th, td {
       text-align: left;
-
       border-bottom: 1px solid #ccc;
+      border-right: 1px solid #eee;
     }
     th {
+      padding: 10px;
       padding-left: 20px;
+      border-top: 1px solid #eee;
     }
     td {
-      span {
-        width: 100%;
+      div {
         height: 100%;
         padding: 10px;
+        margin-right: 5px;
         text-align: left;
         display: block;
+        border-right: 4px solid rgba(0,0,0,0);
+        .mins {
+          float: right;
+          font-size: 12px;
+          line-height: 25px;
+          padding: 0 5px;
+          border-radius: 5px;
+          color: #000;
+          background: #ccc;
+        }
+      }
+      .missing {
+        border-right-color: Orange;
+      }
+      .late {
+        border-right-color: Red;
       }
     }
   }
