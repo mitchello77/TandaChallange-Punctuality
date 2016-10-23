@@ -90,11 +90,11 @@ buildTable = function(dateFrom, dateTo) {
       cell_shiftStart.innerHTML = buildcell(arrRows[i].shiftstart,"h:mma");
       cell_shiftFinish.innerHTML = buildcell(arrRows[i].shiftfinish,"h:mma");
     }
-
+    // all done with getting and setting the data
+    $('.loader').addClass('hidden'); // hide the preloader
   });
 
   buildcell = function(date, dateFormat) {
-    console.log(date);
     var html;
     var html_missing = "<span>Missing</span>"
     if (date != "Missing") {

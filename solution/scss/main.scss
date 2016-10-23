@@ -1,4 +1,5 @@
 @import "normalize/import-now";
+@import "spinners/3-wave";
 
 html {
   box-sizing: border-box;
@@ -18,8 +19,27 @@ body {
   min-width: 300px;
   margin: 0 auto;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-top: 50px;
+  position: relative;
+}
+.hidden {
+  display: none !important;
+}
+.loader {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0.8) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6ffffff',GradientType=1 );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
 }
 
 header {

@@ -6,8 +6,8 @@
   	var H = canvas.height;
   	var degrees = _degrees;
     var linewidth = 15;
-  	var color = "#009ED9"; //green looks better to me
-  	var bgcolor = "#E9F5F6";
+  	var color = "#009ED9";
+    var bgcolor = "#E9F5F6";
   	var text;
 
     //Clear
