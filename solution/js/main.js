@@ -154,7 +154,7 @@ buildTable = function(dateFrom, dateTo) {
 
   buildcell = function(date, dateFormat, notontimebool, diffmins) {
     var html;
-    var html_missing = '<div class="missing">Missing</div>'
+    var html_missing = '<div class="missing">No Clock In/Out</div>'
     if (date != "Missing") {
       var m = moment(date);
       if (m.isValid()) {
@@ -209,7 +209,7 @@ init_stats = function() {
     Q1 = getRandomInt(15, 40);
     Q3 = getRandomInt(60, 85);
   }
-  $('#boxplot .employee').css('left', (round(punctualpercent*100,1)-4.5)+'%'); // Real data. 
+  $('#boxplot .employee').css('left', (round(punctualpercent*100,1)-4.5)+'%'); // Real data.
   $('#boxplot .chart .box').css('left', Q1+'%').css('right',(100-Q3)+'%'); // Q1 & Q3
   $('#boxplot .chart .box-center').css('left', Q2+'%'); // Q2
 };
