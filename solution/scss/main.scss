@@ -1,5 +1,6 @@
 @import "normalize/import-now";
 @import "spinners/3-wave";
+@import "jquery.dynatable";
 
 html {
   box-sizing: border-box;
@@ -15,6 +16,14 @@ body {
   background: #fafafa;
 }
 
+h3 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 10px;
+  color: #000;
+}
 #module {
   max-width: 900px;
   min-width: 300px;
@@ -46,23 +55,26 @@ body {
   border-radius: 10px;
 }
 
+.profileicon {
+  background: url('http://vignette1.wikia.nocookie.net/mugen/images/4/43/Elmo.png') no-repeat;
+  background-size: cover;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  overflow: none;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
 header {
   border-bottom: 1px solid #ccc;
   height: 90px;
   padding: 15px;
   box-sizing: border-box;
   margin-bottom: 20px;
-  .logo {
-    background: url('http://vignette1.wikia.nocookie.net/mugen/images/4/43/Elmo.png') no-repeat;
-    background-size: cover;
-    border: 1px solid #ccc;
-    border-radius: 50%;
+  .profileicon {
     width: 60px;
     height: 60px;
-    display: inline-block;
     float: left;
-    overflow: none;
-    box-sizing: border-box;
   }
   .name {
     font-size: 22px;
@@ -91,6 +103,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 20px;
     div {
       width: 200px;
       padding: 15px;
@@ -106,6 +119,9 @@ section {
         float: right;
       }
     }
+  }
+  .index {
+    width: 100%;
   }
 }
 #legend {
@@ -137,6 +153,7 @@ section {
 
 #datagrid {
   overflow-x: auto;
+  position: relative;
   table {
     border-collapse: collapse;
     min-width: 300px;
@@ -148,7 +165,7 @@ section {
     th {
       padding: 10px;
       padding-left: 20px;
-      border-top: 1px solid #eee;
+      border-top: 1px solid #ccc;
     }
     td {
       div {
@@ -173,6 +190,119 @@ section {
       }
       .late {
         border-right-color: Red;
+      }
+    }
+  }
+}
+
+#boxplot {
+  width: 55%;
+  min-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  .employee-wrap {
+    margin: 0 22px;
+    .employee {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      .profileicon {
+        width: 100%;
+        height: 100%;
+      }
+      .arrow {
+        position: absolute;
+        bottom: -20px;
+        z-index: 999;
+        width: 3px;
+        left: 17.5px;
+        height: 20px;
+        background: #000;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+      }
+    }
+  }
+  .axis-x-title {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .axis-x{
+    position: relative;
+    height: 30px;
+    margin: 0 22px;
+    .label{
+      position: absolute;
+      bottom: 0;
+      float: left;
+      height: 100%;
+      line-height: 40px;
+      text-align: center;
+      &:nth-of-type(1){
+        right: 97.5%;
+      }
+      &:nth-of-type(2){
+        left: 24%;
+      }
+      &:nth-of-type(3){
+        left: 49%;
+      }
+      &:nth-of-type(4){
+        left: 74%;
+      }
+      &:nth-of-type(5){
+        left: 95.5%;
+      }
+      span {
+        position: absolute;
+        top: 0;
+        width: 1px;
+        height: 10px;
+        left: 45%;
+        background: #000;
+      }
+    }
+  }
+  .chart {
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    .plot {
+      width: 100%;
+      margin: 0 20px;
+      height: 30px;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+      position: relative;
+      .centerline {
+        position: absolute;
+        display: block;
+        height: 1px;
+        background: #000;
+        top: 14px;
+        left: 0;
+        right: 0;
+      }
+      .box {
+        position: absolute;
+        top: -10px;
+        z-index: 9;
+        background: #E9F5F6;
+        height: 50px;
+        border: 1px solid #ccc;
+      }
+      .box-center {
+        position: absolute;
+        height: 48px;
+        z-index: 99;
+        width: 3px;
+        top: -10px;
+        background: #666;
+        margin: 1px 0;
       }
     }
   }

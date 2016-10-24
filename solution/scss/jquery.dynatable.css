@@ -1,0 +1,88 @@
+/*
+ * jQuery Dynatable plugin 0.3.1
+ *
+ * Copyright (c) 2014 Steve Schwartz (JangoSteve)
+ *
+ * Dual licensed under the AGPL and Proprietary licenses:
+ *   http://www.dynatable.com/license/
+ *
+ * Date: Tue Jan 02 2014
+ */
+th a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+}
+th a:hover {
+  color: #000;
+}
+
+.dynatable-search {
+  float: right;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.dynatable-pagination-links {
+  float: right;
+  margin-right: 10px;
+}
+
+.dynatable-pagination-links li:first-of-type {
+  display: none;
+}
+
+.dynatable-record-count {
+  display: block;
+  padding: 5px 0;
+}
+
+.dynatable-pagination-links span,
+.dynatable-pagination-links li {
+  display: inline-block;
+}
+
+.dynatable-page-link,
+.dynatable-page-break {
+  display: block;
+  padding: 5px 7px;
+}
+
+.dynatable-page-link {
+  cursor: pointer;
+  margin: 0 3px;
+}
+
+.dynatable-page-prev, .dynatable-page-next {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.dynatable-page-prev:hover, .dynatable-page-next:hover {
+  background: #eee;
+  border-radius: 5px;
+}
+.dynatable-active-page,
+.dynatable-disabled-page {
+  cursor: text;
+}
+.dynatable-active-page:hover,
+.dynatable-disabled-page:hover {
+  text-decoration: none;
+}
+
+li.dynatable-active-page {
+  border-bottom: 2px solid #666;
+}
+
+.dynatable-disabled-page,
+.dynatable-disabled-page:hover {
+  background: none;
+  color: #999;
+}
+
+.dynatable-per-page {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+}

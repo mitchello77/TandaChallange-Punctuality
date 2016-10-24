@@ -22,7 +22,7 @@
           </div>
         </div>
         <header>
-          <span class="logo"></span>
+          <span class="profileicon"></span>
           <span class="name">Elmo</span>
         </header>
         <main>
@@ -43,6 +43,32 @@
                 <span id="leftearly" class="value">#</span>
               </div>
             </div>
+            <div class="index">
+              <h3>Employee Punctuality Index</h3>
+              <div id="boxplot">
+                <div class="employee-wrap">
+                  <div class="employee">
+                    <span class="profileicon"></span>
+                    <span class="arrow"></span>
+                  </div>
+                </div>
+                <div class="chart">
+                  <div class="plot">
+                    <div class="box"></div>
+                    <div class="box-center"></div>
+                    <span class="centerline"></span>
+                  </div>
+                </div>
+                <div class="axis-x">
+                  <div class="label"><span></span>0%</div>
+                  <div class="label"><span></span>25%</div>
+                  <div class="label"><span></span>50%</div>
+                  <div class="label"><span></span>75%</div>
+                  <div class="label"><span></span>100%</div>
+                </div>
+                <div class="axis-x-title">Punctuality</div>
+              </div>
+            </div>
           </section>
           <section id="legend">
             <div class="wrap">
@@ -52,13 +78,18 @@
           </section>
           <section id="datagrid">
             <table id="datatable" style="width:100%">
-              <tr>
-                <th>Date</th>
-                <th>Rostered Start</th>
-                <th>Actual Start</th>
-                <th>Rostered Finish</th>
-                <th>Actual Finish</th>
-              </tr>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Rostered Start</th>
+                  <th>Actual Start</th>
+                  <th>Rostered Finish</th>
+                  <th>Actual Finish</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
             </table>
           </section>
         </main>
@@ -67,6 +98,7 @@
         <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/locale/en-au.js"></script>
+        <script src="js/jquery.dynatable.js"></script>
         <script src="js/gauge.js"></script>
         <script src="js/main.js"></script>
     </body>

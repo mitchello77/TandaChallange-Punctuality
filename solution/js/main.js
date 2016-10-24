@@ -15,6 +15,7 @@ $(function() { // We are ready!
     EmployeeStats.minutessaved = 0;
     //Init Datatable
     buildTable('2013-09-15','2014-06-07');
+
 });
 //get and consolodates the data into rows
 //dateFrom and dateTo AS Date
@@ -32,6 +33,7 @@ buildTable = function(dateFrom, dateTo) {
     var RosterData = Roster[0],
         ShiftData = Shift[0];
     var table = document.getElementById("datatable");
+    var tableBodyRef = table.getElementsByTagName('tbody')[0];
 
     // dump all roster data
     for (var i=0; i<RosterData.length; i++) {
@@ -126,7 +128,7 @@ buildTable = function(dateFrom, dateTo) {
            }
          }
        }
-      var row = table.insertRow(-1);
+      var row = tableBodyRef.insertRow(tableBodyRef.rows.length);
       var cell_date = row.insertCell(0);
       var cell_rosterStart = row.insertCell(1);
       var cell_shiftStart = row.insertCell(2);
@@ -142,6 +144,12 @@ buildTable = function(dateFrom, dateTo) {
     $('.loader').addClass('hidden'); // hide the preloader
     // Init Statistics
     init_stats();
+    // do pagnation and sorting.
+    $('#datatable').dynatable({
+      features: {
+        recordCount: false
+      }
+    });
   });
 
   buildcell = function(date, dateFormat, notontimebool, diffmins) {
@@ -172,8 +180,6 @@ buildTable = function(dateFrom, dateTo) {
 
 init_stats = function() {
   var punctualcount = EmployeeStats.leave_ontime + EmployeeStats.leave_late + EmployeeStats.arrive_ontime + EmployeeStats.arrive_early;
-  console.log('Punctual count: '+punctualcount);
-  console.log('Total Rosters: '+EmployeeStats.totalrosters);
   var lateearlysum = EmployeeStats.arrive_late + EmployeeStats.leave_early;
   var punctualpercent;
   if (lateearlysum == 0) {
@@ -192,9 +198,29 @@ init_stats = function() {
   // Init Gauge
   var canvas = document.getElementById("gauge");
   init_gauge(canvas,(punctualpercent*360));
+
+  // Init Box Plot
+  // Gets Random values for the box plot since I dont have any real data.
+  var Q1, Q2, Q3;
+  Q1 = getRandomInt(15, 40);
+  Q2 = getRandomInt(35, 65);
+  Q3 = getRandomInt(60, 85);
+  while (Q1 == Q3) {
+    Q1 = getRandomInt(15, 40);
+    Q3 = getRandomInt(60, 85);
+  }
+  $('#boxplot .employee').css('left', (round(punctualpercent*100,1)-4.5)+'%'); // Real data. 
+  $('#boxplot .chart .box').css('left', Q1+'%').css('right',(100-Q3)+'%'); // Q1 & Q3
+  $('#boxplot .chart .box-center').css('left', Q2+'%'); // Q2
 };
 
 function round(value, precision) {
     var multiplier = Math.pow(10, precision || 0);
     return Math.round(value * multiplier) / multiplier;
+}
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }

@@ -435,6 +435,82 @@ textarea {
   20% {
     transform: scaleY(1); } }
 
+/*
+ * jQuery Dynatable plugin 0.3.1
+ *
+ * Copyright (c) 2014 Steve Schwartz (JangoSteve)
+ *
+ * Dual licensed under the AGPL and Proprietary licenses:
+ *   http://www.dynatable.com/license/
+ *
+ * Date: Tue Jan 02 2014
+ */
+th a {
+  color: #000;
+  text-decoration: none;
+  display: block; }
+
+th a:hover {
+  color: #000; }
+
+.dynatable-search {
+  float: right;
+  margin-bottom: 10px;
+  margin-right: 10px; }
+
+.dynatable-pagination-links {
+  float: right;
+  margin-right: 10px; }
+
+.dynatable-pagination-links li:first-of-type {
+  display: none; }
+
+.dynatable-record-count {
+  display: block;
+  padding: 5px 0; }
+
+.dynatable-pagination-links span,
+.dynatable-pagination-links li {
+  display: inline-block; }
+
+.dynatable-page-link,
+.dynatable-page-break {
+  display: block;
+  padding: 5px 7px; }
+
+.dynatable-page-link {
+  cursor: pointer;
+  margin: 0 3px; }
+
+.dynatable-page-prev, .dynatable-page-next {
+  border: 1px solid #ccc;
+  border-radius: 5px; }
+
+.dynatable-page-prev:hover, .dynatable-page-next:hover {
+  background: #eee;
+  border-radius: 5px; }
+
+.dynatable-active-page,
+.dynatable-disabled-page {
+  cursor: text; }
+
+.dynatable-active-page:hover,
+.dynatable-disabled-page:hover {
+  text-decoration: none; }
+
+li.dynatable-active-page {
+  border-bottom: 2px solid #666; }
+
+.dynatable-disabled-page,
+.dynatable-disabled-page:hover {
+  background: none;
+  color: #999; }
+
+.dynatable-per-page {
+  position: absolute;
+  bottom: 20px;
+  left: 10px; }
+
 html {
   box-sizing: border-box; }
 
@@ -445,6 +521,14 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   background: #fafafa; }
+
+h3 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 10px;
+  color: #000; }
 
 #module {
   max-width: 900px;
@@ -478,23 +562,25 @@ body {
       justify-content: center;
   border-radius: 10px; }
 
+.profileicon {
+  background: url("http://vignette1.wikia.nocookie.net/mugen/images/4/43/Elmo.png") no-repeat;
+  background-size: cover;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  overflow: none;
+  box-sizing: border-box;
+  display: inline-block; }
+
 header {
   border-bottom: 1px solid #ccc;
   height: 90px;
   padding: 15px;
   box-sizing: border-box;
   margin-bottom: 20px; }
-  header .logo {
-    background: url("http://vignette1.wikia.nocookie.net/mugen/images/4/43/Elmo.png") no-repeat;
-    background-size: cover;
-    border: 1px solid #ccc;
-    border-radius: 50%;
+  header .profileicon {
     width: 60px;
     height: 60px;
-    display: inline-block;
-    float: left;
-    overflow: none;
-    box-sizing: border-box; }
+    float: left; }
   header .name {
     font-size: 22px;
     margin-left: 15px;
@@ -523,7 +609,8 @@ section {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -ms-flex-pack: center;
-        justify-content: center; }
+        justify-content: center;
+    margin-bottom: 20px; }
     #breakdown .grid div {
       width: 200px;
       padding: 15px;
@@ -536,6 +623,8 @@ section {
         text-transform: uppercase; }
       #breakdown .grid div span.value {
         float: right; }
+  #breakdown .index {
+    width: 100%; }
 
 #legend {
   display: -ms-flexbox;
@@ -568,7 +657,8 @@ section {
         background-color: Orange; }
 
 #datagrid {
-  overflow-x: auto; }
+  overflow-x: auto;
+  position: relative; }
   #datagrid table {
     border-collapse: collapse;
     min-width: 300px; }
@@ -579,7 +669,7 @@ section {
     #datagrid table th {
       padding: 10px;
       padding-left: 20px;
-      border-top: 1px solid #eee; }
+      border-top: 1px solid #ccc; }
     #datagrid table td div {
       height: 100%;
       padding: 10px;
@@ -599,3 +689,99 @@ section {
       border-right-color: Orange; }
     #datagrid table td .late {
       border-right-color: Red; }
+
+#boxplot {
+  width: 55%;
+  min-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 10px; }
+  #boxplot .employee-wrap {
+    margin: 0 22px; }
+    #boxplot .employee-wrap .employee {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      position: relative; }
+      #boxplot .employee-wrap .employee .profileicon {
+        width: 100%;
+        height: 100%; }
+      #boxplot .employee-wrap .employee .arrow {
+        position: absolute;
+        bottom: -20px;
+        z-index: 999;
+        width: 3px;
+        left: 17.5px;
+        height: 20px;
+        background: #000;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%; }
+  #boxplot .axis-x-title {
+    text-align: center;
+    margin-top: 10px; }
+  #boxplot .axis-x {
+    position: relative;
+    height: 30px;
+    margin: 0 22px; }
+    #boxplot .axis-x .label {
+      position: absolute;
+      bottom: 0;
+      float: left;
+      height: 100%;
+      line-height: 40px;
+      text-align: center; }
+      #boxplot .axis-x .label:nth-of-type(1) {
+        right: 97.5%; }
+      #boxplot .axis-x .label:nth-of-type(2) {
+        left: 24%; }
+      #boxplot .axis-x .label:nth-of-type(3) {
+        left: 49%; }
+      #boxplot .axis-x .label:nth-of-type(4) {
+        left: 74%; }
+      #boxplot .axis-x .label:nth-of-type(5) {
+        left: 95.5%; }
+      #boxplot .axis-x .label span {
+        position: absolute;
+        top: 0;
+        width: 1px;
+        height: 10px;
+        left: 45%;
+        background: #000; }
+  #boxplot .chart {
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 20px 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center; }
+    #boxplot .chart .plot {
+      width: 100%;
+      margin: 0 20px;
+      height: 30px;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+      position: relative; }
+      #boxplot .chart .plot .centerline {
+        position: absolute;
+        display: block;
+        height: 1px;
+        background: #000;
+        top: 14px;
+        left: 0;
+        right: 0; }
+      #boxplot .chart .plot .box {
+        position: absolute;
+        top: -10px;
+        z-index: 9;
+        background: #E9F5F6;
+        height: 50px;
+        border: 1px solid #ccc; }
+      #boxplot .chart .plot .box-center {
+        position: absolute;
+        height: 48px;
+        z-index: 99;
+        width: 3px;
+        top: -10px;
+        background: #666;
+        margin: 1px 0; }
