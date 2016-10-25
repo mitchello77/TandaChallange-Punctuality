@@ -13,14 +13,17 @@ The solution is built from HTML, CSS, JS and contained within a Node Project:
 
 ###Tasks Completed
 From the task list provided, I completed the following:
+
 ####Basic features:
 * Display rostered times for specific dates
 * Display if corresponding actual time was on time, or if there was an issue with it
 * Hover over actual time comment to see what the actual time was
+
 ####Advanced features:
 * Pagination ("Show [25] shifts" / "Showing 1 to 5 of 5 shifts") (Handled by [Jquery Dynatable](https://github.com/alfajango/jquery-dynatable). ) re-wrote a lot the css to match the Tanda style. )
 * Handling of shifts/rosters with some times missing (just indicate that in the UI, "no finish time clocked")
 * Summary of times, through textual summary ("Mike is punctual 80% of the time"), chart, and summary of results ("punctual: 8, left early: 2")
+
 ####New features:
 * Redesign data table with colour bar prompts
 * Table legend
