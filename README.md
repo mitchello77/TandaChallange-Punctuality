@@ -1,29 +1,26 @@
 #Tanda Code Challenges - Punctuality
 
 Hi!
-Welcome to my solution to the coding challenge 'Punctuality' presented by [TandaHQ](https://github.com/TandaHQ/work-samples.
+Welcome to my solution to the coding challenge 'Punctuality' presented by [TandaHQ](https://github.com/TandaHQ/work-samples).
 
 I decided to complete the challenge ‘Punctuality’ which is an per-employee summary of shift punctuality. I chose this challenge because it appealed to me and my technical prowess. I was also intesrested in 'Browser Rosters' and 'Pings' but I felt this was a nice mixture between front-end and back-end design/engineering and therefore would showcase my abilities.
 
 ###How to view my solution
-The solution is built from HTML, CSS, JS and contained within a Node Project.
-1.	You will need to be running the server to supply the data. This can be found in /task and instructions to run the server at /task/readme.md
-2.	Open /solution/index.html in your favourite browser! The solution has been tested in Chrome and Firefox, though should display fine in other browsers.
+The solution is built from HTML, CSS, JS and contained within a Node Project:
+1. You will need to be running the server to supply the data. This can be found in /task and instructions to run the server at /task/readme.md
+1. Open /solution/index.html in your favourite browser! The solution has been tested in Chrome and Firefox, though should display fine in other browsers.
   *	Or, if you are feeling extra technical and have Node installed, you can launch the solution through browsersync with “cd  /solution/ gulp”. (See gulp.js for required dependencies)
 
 ###Tasks Completed
-From the task list provided, I completed the following.
-
+From the task list provided, I completed the following:
 ####Basic features:
 * Display rostered times for specific dates
 * Display if corresponding actual time was on time, or if there was an issue with it
 * Hover over actual time comment to see what the actual time was
-
 ####Advanced features:
 * Pagination ("Show [25] shifts" / "Showing 1 to 5 of 5 shifts") (Handled by [Jquery Dynatable](https://github.com/alfajango/jquery-dynatable). ) re-wrote a lot the css to match the Tanda style. )
 * Handling of shifts/rosters with some times missing (just indicate that in the UI, "no finish time clocked")
 * Summary of times, through textual summary ("Mike is punctual 80% of the time"), chart, and summary of results ("punctual: 8, left early: 2")
-
 ####New features:
 * Redesign data table with colour bar prompts
 * Table legend
