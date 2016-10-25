@@ -44,4 +44,4 @@ If I was to revisit this project, I would add a ‘reveal more’ button and hav
 I would also add the date picker and write the pagination logic myself. The current situation didn’t permit me the time to finish these two features.
 
 ### The Solution
-![The new punctuality module](screenshot.png)
+![The new punctuality module](screenshot.PNG)
