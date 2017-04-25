@@ -59,4 +59,4 @@ I would also add the date picker and write the pagination logic myself. The curr
 
 
 ### The Solution
-![The new punctuality module](screenshot.PNG)
+->![The new punctuality module](screenshot.PNG)<-
