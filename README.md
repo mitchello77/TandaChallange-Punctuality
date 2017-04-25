@@ -54,7 +54,7 @@ I would also add the date picker and write the pagination logic myself. The curr
 - add event for shown rows change to recalculate pages and update the table
 - store current page var and set to 1 as defult
 4. Bind ‘repagnate’ function to table to handle what rows are shown. Use hide and slice to achieve this. Something like `$table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();`
-5. Generate page buttons. Loop page count and insert `<li>``
+5. Generate page buttons. Loop page count and insert `<li>`
 6. Bind event to page buttons and call repaginate on click with new current page var
 
 
