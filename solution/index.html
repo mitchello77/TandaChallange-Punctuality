@@ -70,13 +70,16 @@
               </div>
             </div>
           </section>
-          <section id="legend">
-            <div class="wrap">
-              <div><span class="orange"></span>: No Clock In/Out</div>
-              <div><span class="red"></span>: Unpunctual Clock In/Out</div>
-            </div>
+          <section id="reveal">
+            <button type="button" name="reveal" id="btnreveal">Reveal Data<i></i></button>
           </section>
-          <section id="datagrid">
+          <section id="datagrid" class="hidden">
+            <div id="legend">
+              <div class="wrap">
+                <div><span class="orange"></span>: No Clock In/Out</div>
+                <div><span class="red"></span>: Unpunctual Clock In/Out</div>
+              </div>
+            </div>
             <table id="datatable" style="width:100%">
               <thead>
                 <tr>
@@ -95,9 +98,9 @@
         </main>
       </section>
 
-        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/locale/en-au.js"></script>
+        <script src="js/jquery-3.1.0.min.js"></script>
+        <script src="js/moment.min.js"></script>
+        <script src="js/moment_en-au.js"></script>
         <script src="js/jquery.dynatable.js"></script>
         <script src="js/gauge.js"></script>
         <script src="js/main.js"></script>

@@ -4,6 +4,8 @@
 
 html {
   box-sizing: border-box;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -56,7 +58,7 @@ h3 {
 }
 
 .profileicon {
-  background: url('http://vignette1.wikia.nocookie.net/mugen/images/4/43/Elmo.png') no-repeat;
+  background: url('../img/elmo.gif') no-repeat;
   background-size: cover;
   border: 1px solid #ccc;
   border-radius: 50%;
@@ -124,9 +126,52 @@ section {
     width: 100%;
   }
 }
+
+#reveal {
+  display: flex;
+  justify-content: center;
+  button {
+    border-radius: 50px;
+    border: 3px solid #009ED9;
+    color: #009ED9;
+    overflow: hidden;
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 20px 40px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    transition: all 0.3s;
+    &:hover {
+      background: #009ED9;
+      color: #ffffff;
+    }
+    i {
+      margin-left: 10px;
+      border-style: solid;
+      border-color: #009ED9;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 5px;
+      transform: rotate(45deg);
+    }
+    &:hover i {
+      border-color: #FFFFFF;
+    }
+    .reverse {
+    transform: rotate(225deg);
+    }
+  }
+}
 #legend {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
   .wrap {
     display: inline-flex;
     flex-wrap: wrap;

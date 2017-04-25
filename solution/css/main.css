@@ -512,7 +512,9 @@ li.dynatable-active-page {
   left: 10px; }
 
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  overflow-y: scroll;
+  overflow-x: hidden; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
@@ -563,7 +565,7 @@ h3 {
   border-radius: 10px; }
 
 .profileicon {
-  background: url("http://vignette1.wikia.nocookie.net/mugen/images/4/43/Elmo.png") no-repeat;
+  background: url("../img/elmo.gif") no-repeat;
   background-size: cover;
   border: 1px solid #ccc;
   border-radius: 50%;
@@ -626,11 +628,50 @@ section {
   #breakdown .index {
     width: 100%; }
 
-#legend {
+#reveal {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
       justify-content: center; }
+  #reveal button {
+    border-radius: 50px;
+    border: 3px solid #009ED9;
+    color: #009ED9;
+    overflow: hidden;
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 20px 40px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    transition: all 0.3s; }
+    #reveal button:hover {
+      background: #009ED9;
+      color: #ffffff; }
+    #reveal button i {
+      margin-left: 10px;
+      border-style: solid;
+      border-color: #009ED9;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 5px;
+      transform: rotate(45deg); }
+    #reveal button:hover i {
+      border-color: #FFFFFF; }
+    #reveal button .reverse {
+      transform: rotate(225deg); }
+
+#legend {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin-bottom: 20px; }
   #legend .wrap {
     display: -ms-inline-flexbox;
     display: inline-flex;

@@ -13,6 +13,11 @@ $(function() { // We are ready!
     EmployeeStats.arrive_early = 0;
     EmployeeStats.totalrosters = 0;
     EmployeeStats.minutessaved = 0;
+    //handler for reveal
+    $('#btnreveal').click(function(){;
+      $('#datagrid').toggleClass('hidden');
+      $('#btnreveal i').toggleClass('reverse');
+    });
     //Init Datatable
     buildTable('2013-09-15','2014-06-07');
 
@@ -203,7 +208,7 @@ init_stats = function() {
   // Gets Random values for the box plot since I dont have any real data.
   var Q1, Q2, Q3;
   Q1 = getRandomInt(15, 40);
-  Q2 = getRandomInt(35, 65);
+  Q2 = getRandomInt(45, 55);
   Q3 = getRandomInt(60, 85);
   while (Q1 == Q3) {
     Q1 = getRandomInt(15, 40);
