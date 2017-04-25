@@ -42,9 +42,21 @@ For demonstration purposes,  the box plot’s values are randomly generated with
 This comparison may already be a feature in another module but having it displayed inside a specific employees summary is convenient. The information is simple, yet effective at giving context to an employee’s punctuality compared against the entire workplace.  
 
 ### Improvements
-If I was to revisit this project, I would add a ‘reveal more’ button and have the data table hidden. Displaying the entirety of the data may be overwhelming to some, especially non-technical users. The most important information is at the top and presented through a visual and textual summary. The module would function and still convey critical information about employees without the data table present which leads to my reasoning as the table being an accessory to the module. If the users desires, the table can be un-collapsed for further context.
+~~If I was to revisit this project, I would add a ‘reveal more’ button and have the data table hidden. Displaying the entirety of the data may be overwhelming to some, especially non-technical users. The most important information is at the top and presented through a visual and textual summary. The module would function and still convey critical information about employees without the data table present which leads to my reasoning as the table being an accessory to the module. If the users desires, the table can be un-collapsed for further context.~~
+Added!
 
 I would also add the date picker and write the pagination logic myself. The current situation didn’t permit me the time to finish these two features.
+
+### How to Impliment Pagnation
+1. Build HTML for "rows displayed" dropdown (<input>) and pages area (<ul> in a row).
+2. Set intervals for rows displayed – 10,20,30 ect
+3. Get pages based on shown rows / total rows
+- add event for shown rows change to recalculate pages and update the table
+- store current page var and set to 1 as defult
+4. Bind ‘repagnate’ function to table to handle what rows are shown. Use hide and slice to achieve this. Something like `$table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();`
+5. Generate page buttons. Loop page count and insert <li>
+6. Bind event to page buttons and call repaginate on click with new current page var
+
 
 ### The Solution
 ![The new punctuality module](screenshot.PNG)
