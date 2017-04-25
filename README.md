@@ -48,13 +48,13 @@ Added!
 I would also add the date picker and write the pagination logic myself. The current situation didn’t permit me the time to finish these two features.
 
 ### How to Impliment Pagnation
-1. Build HTML for "rows displayed" dropdown (<input>) and pages area (<ul> in a row).
+1. Build HTML for "rows displayed" dropdown (`<input>`) and pages area (`<ul>` in a row).
 2. Set intervals for rows displayed – 10,20,30 ect
 3. Get pages based on shown rows / total rows
 - add event for shown rows change to recalculate pages and update the table
 - store current page var and set to 1 as defult
 4. Bind ‘repagnate’ function to table to handle what rows are shown. Use hide and slice to achieve this. Something like `$table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();`
-5. Generate page buttons. Loop page count and insert <li>
+5. Generate page buttons. Loop page count and insert `<li>``
 6. Bind event to page buttons and call repaginate on click with new current page var
 
 
